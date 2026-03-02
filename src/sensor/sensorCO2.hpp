@@ -108,8 +108,8 @@ bool sensorCO2::sample()
         m_valueVector[HUMIDITY].value.s32 = humidity * SCALE;
         m_valueVector[TEMPERATURE].value.s32 = temperature * SCALE;
 
-        m_valueVector[SERIAL_HIGH].value.s32 = (int32_t)(_serialNumber >> 32);
-        m_valueVector[SERIAL_LOW].value.s32 = (int32_t)(_serialNumber & 0xFFFFFFFF);
+        m_valueVector[SERIAL_HIGH].value.s32 = (int32_t)(_serial >> 32);
+        m_valueVector[SERIAL_LOW].value.s32 = (int32_t)(_serial & 0xFFFFFFFF);
     }
 
     return true;
