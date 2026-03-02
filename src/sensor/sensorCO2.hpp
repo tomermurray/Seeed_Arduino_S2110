@@ -25,11 +25,14 @@ public:
         TEMPERATURE,
         HUMIDITY,
         CO2,
+        SERIAL_HIGH,
+        SERIAL_LOW,
         MAX
     };
 
 private:
     SensirionI2cScd4x _scd4x; // IIC
+    uint64_t _serial;
 };
 
 uint16_t sensorCO2::init(uint16_t reg, bool i2c_available)
@@ -68,7 +71,7 @@ uint16_t sensorCO2::init(uint16_t reg, bool i2c_available)
         _connected = false;
         return t_reg - reg;
     }
-    if (_scd4x.getSerialNumber(serial))
+    if (_scd4x.getSerialNumber(_serial))
     {
         _connected = false;
         return t_reg - reg;
@@ -104,6 +107,9 @@ bool sensorCO2::sample()
         m_valueVector[CO2].value.s32 = co2 * SCALE;
         m_valueVector[HUMIDITY].value.s32 = humidity * SCALE;
         m_valueVector[TEMPERATURE].value.s32 = temperature * SCALE;
+
+        m_valueVector[SERIAL_HIGH].value.s32 = (int32_t)(_serialNumber >> 32);
+        m_valueVector[SERIAL_LOW].value.s32 = (int32_t)(_serialNumber & 0xFFFFFFFF);
     }
 
     return true;
