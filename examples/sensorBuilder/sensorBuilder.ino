@@ -3,6 +3,19 @@
 
 SensorBuilderClass SensorBuilder;
 
+#define CO2
+#define LIGHT
+#define FLAME
+#define O2
+#define SUNLIGHT
+#define BMP280
+#define BME688
+#define MULTIGAS
+#define UV
+#define TURBIDITY
+#define TDS
+#define ULTRASONIC
+
 void setup()
 {
   Serial.begin(9600);

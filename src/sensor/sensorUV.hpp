@@ -1,6 +1,8 @@
 #ifndef _SENSOR_UV_H
 #define _SENSOR_UV_H
 
+#ifdef UV
+
 #include "sensorClass.hpp"
 
 class sensorUV : public sensorClass
@@ -59,4 +61,6 @@ bool sensorUV::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef UV */
+
+#endif /* #ifndef _SENSOR_UV_H */

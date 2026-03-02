@@ -1,5 +1,9 @@
 #ifndef _SENSOR_CO2_H
 #define _SENSOR_CO2_H
+
+#define CO2
+#ifdef CO2
+
 #include "sensorClass.hpp"
 #include <SensirionI2CScd4x.h>
 #include <Wire.h>
@@ -107,4 +111,6 @@ bool sensorCO2::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef CO2 */
+
+#endif /* #ifndef _SENSOR_CO2_H */

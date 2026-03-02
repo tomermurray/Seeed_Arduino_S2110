@@ -1,6 +1,8 @@
 #ifndef _SENSOR_BMP280_H
 #define _SENSOR_BMP280_H
 
+#ifdef BMP280
+
 #include "sensorClass.hpp"
 #include <Seeed_BMP280.h>
 #include <Wire.h>
@@ -87,4 +89,6 @@ bool sensorBMP280::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef BMP280 */
+
+#endif /* #ifndef _SENSOR_BMP280_H */

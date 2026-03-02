@@ -1,6 +1,8 @@
 #ifndef _SENSOR_FLAME_H
 #define _SENSOR_FLAME_H
 
+#ifdef FLAME
+
 #include "sensorClass.hpp"
 
 #define FLAME_DIGITAL_PIN D3
@@ -57,4 +59,6 @@ bool sensorFlame::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef FLAME */
+
+#endif /* #ifndef _SENSOR_FLAME_H */

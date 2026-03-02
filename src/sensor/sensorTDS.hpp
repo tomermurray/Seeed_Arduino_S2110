@@ -1,6 +1,8 @@
 #ifndef _SENSOR_TDS_H
 #define _SENSOR_TDS_H
 
+#ifdef TDS
+
 #include "sensorClass.hpp"
 
 class sensorTDS : public sensorClass
@@ -56,4 +58,6 @@ bool sensorTDS::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef TDS */
+
+#endif /* #ifndef _SENSOR_TDS_H */

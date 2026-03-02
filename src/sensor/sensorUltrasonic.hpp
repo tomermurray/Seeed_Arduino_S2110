@@ -1,6 +1,8 @@
 #ifndef _SENSOR_ULTRASONIC_H
 #define _SENSOR_ULTRASONIC_H
 
+#ifdef ULTRASONIC
+
 #include "sensorClass.hpp"
 #include "Ultrasonic.h"
 
@@ -60,4 +62,6 @@ bool sensorUltrasonic::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef ULTRASONIC */
+
+#endif /* #ifndef _SENSOR_ULTRASONIC_H */

@@ -1,6 +1,8 @@
 #ifndef _SENSOR_MULTIGAS_H
 #define _SENSOR_MULTIGAS_H
 
+#ifdef MULTIGAS
+
 #include "sensorClass.hpp"
 #include <Multichannel_Gas_GMXXX.h>
 #include <Wire.h>
@@ -90,4 +92,6 @@ bool sensorMultiGas::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef MULTIGAS */
+
+#endif /* #ifndef _SENSOR_MULTIGAS_H */

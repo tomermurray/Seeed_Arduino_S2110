@@ -1,6 +1,8 @@
 #ifndef _SENSOR_TURBIDITY_H
 #define _SENSOR_TURBIDITY_H
 
+#ifdef TURBIDITY
+
 #include "sensorClass.hpp"
 
 class sensorTurbidity : public sensorClass
@@ -54,4 +56,6 @@ bool sensorTurbidity::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef TURBIDITY */
+
+#endif /* #ifndef _SENSOR_TURBIDITY_H */

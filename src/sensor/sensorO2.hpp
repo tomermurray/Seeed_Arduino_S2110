@@ -1,6 +1,8 @@
 #ifndef _SENSOR_O2_H
 #define _SENSOR_O2_H
 
+#ifdef O2
+
 #include "sensorClass.hpp"
 
 #define O2_ADC_PIN A3
@@ -67,4 +69,6 @@ bool sensorO2::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef O2 */
+
+#endif /* #ifndef _SENSOR_O2_H */

@@ -1,6 +1,8 @@
 #ifndef _SENSOR_SUNLINGHT_H
 #define _SENSOR_SUNLINGHT_H
 
+#ifdef SUNLIGHT
+
 #include "sensorClass.hpp"
 #include <Si115X.h>
 #include <Wire.h>
@@ -83,4 +85,6 @@ bool sensorSunlight::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef SUNLIGHT */
+
+#endif /* #ifndef _SENSOR_SUNLINGHT_H */

@@ -1,6 +1,8 @@
 #ifndef _SENSOR_BME688_H
 #define _SENSOR_BME688_H
 
+#ifdef BME680
+
 #include "sensorClass.hpp"
 #include <seeed_bme680.h>
 #include <Wire.h>
@@ -98,4 +100,6 @@ bool sensorBME688::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef BME680 */
+
+#endif /* #ifndef _SENSOR_BME688_H */

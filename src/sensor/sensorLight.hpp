@@ -1,6 +1,8 @@
 #ifndef _SENSOR_LIGHT_H
 #define _SENSOR_LIGHT_H
 
+#ifdef LIGHT
+
 #include "sensorClass.hpp"
 
 #define LIGHT_ADC_PIN A3
@@ -56,4 +58,6 @@ bool sensorLight::connected()
     return _connected;
 }
 
-#endif
+#endif /* #ifdef LIGHT */
+
+#endif /* #ifndef _SENSOR_LIGHT_H */
