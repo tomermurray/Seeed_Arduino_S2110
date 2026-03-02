@@ -29,7 +29,7 @@ public:
     };
 
 private:
-    SensirionI2CScd4x _scd4x; // IIC
+    SensirionI2cScd4x _scd4x; // IIC
 };
 
 uint16_t sensorCO2::init(uint16_t reg, bool i2c_available)
@@ -59,18 +59,21 @@ uint16_t sensorCO2::init(uint16_t reg, bool i2c_available)
         return t_reg - reg;
     }
 
-    uint16_t serial0;
-    uint16_t serial1;
-    uint16_t serial2;
+    uint64_t serial;
     uint32_t timeout = 5000;
 
-    _scd4x.begin(Wire);
+    _scd4x.begin(Wire,SENSOR_SCD4X_I2C_ADDR);
     if (_scd4x.stopPeriodicMeasurement())
     {
         _connected = false;
         return t_reg - reg;
     }
-    if (_scd4x.getSerialNumber(serial0, serial1, serial2))
+    if (_scd4x.getSerialNumber(serial))
+    {
+        _connected = false;
+        return t_reg - reg;
+    }
+    if (_scd4x.setAutomaticSelfCalibrationEnabled(0))
     {
         _connected = false;
         return t_reg - reg;
