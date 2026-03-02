@@ -1,8 +1,8 @@
 #ifndef _SENSOR_CO2_H
 #define _SENSOR_CO2_H
 
-#define CO2
-#ifdef CO2
+#define CO2_ENABLED
+#ifdef CO2_ENABLED
 
 #include "sensorClass.hpp"
 #include <SensirionI2CScd4x.h>
@@ -120,6 +120,6 @@ bool sensorCO2::connected()
     return _connected;
 }
 
-#endif /* #ifdef CO2 */
+#endif /* #ifdef CO2_ENABLED */
 
 #endif /* #ifndef _SENSOR_CO2_H */

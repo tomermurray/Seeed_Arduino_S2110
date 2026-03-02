@@ -12,9 +12,9 @@
 #ifdef BME688
 #include "sensor/sensorBME688.hpp"
 #endif /* #ifdef BME688 */
-#ifdef CO2
+#ifdef CO2_ENABLED
 #include "sensor/sensorCO2.hpp"
-#endif /* #ifdef CO2 */
+#endif /* #ifdef CO2_ENABLED */
 #ifdef SUNLIGHT
 #include "sensor/sensorSunlight.hpp"
 #endif /* #ifdef SUNLIGHT */
