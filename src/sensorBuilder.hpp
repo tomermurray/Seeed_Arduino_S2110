@@ -46,7 +46,9 @@
 
 #define SENSOR_BUILDER_DEF_BAUD 9600
 #define SENSOR_BUILDER_DEF_SLAVE 1
-#define SENSOR_BUILDER_DEF_VERSION 0x10010001
+#define SENSOR_BUILDER_DEF_VERSION 0x53420001 
+// 53 42 is the ASCII hex equivalent for SB (Sensor Builder)
+// This can be used as an ID for Sensor Builder in the uplink Decoder function.
 
 #define SENSOR_BUILDER_DEF_VALUE 0x0000
 
