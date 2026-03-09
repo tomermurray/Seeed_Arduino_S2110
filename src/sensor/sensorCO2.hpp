@@ -104,7 +104,7 @@ bool sensorCO2::sample()
 
     if (error == 0)
     {
-        m_valueVector[CO2].value.s32 = co2 * SCALE;
+        m_valueVector[CO2].value.s32 = (int32_t)co2;
         m_valueVector[HUMIDITY].value.s32 = humidity * SCALE;
         m_valueVector[TEMPERATURE].value.s32 = temperature * SCALE;
 
